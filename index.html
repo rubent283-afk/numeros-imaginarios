@@ -15,72 +15,109 @@ align-items:center;
 text-align:center;
 font-family:Arial;
 color:white;
-background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
-url('https://images.unsplash.com/photo-1509228468518-180dd4864904');
-background-size:cover;
-background-position:center;
+overflow:hidden;
+background:black;
 ">
 
-    <h1 style="font-size:50px; letter-spacing:2px;">
-        Numeros imaginarios
-    </h1>
+<!-- 🔥 FONDO ABSTRACTO -->
+<div style="
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:
+linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)),
+url('https://images.unsplash.com/photo-1526406915894-7bcd65f60845');
+background-size:cover;
+background-position:center;
+z-index:-3;
+"></div>
 
-    <p style="font-size:22px; opacity:0.9;">
-        🎭 PASADO PRESENTE FUTURO
-    </p>
+<!-- ✨ CAPA ARENOSA / TIEMPO -->
+<div style="
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background: radial-gradient(circle, rgba(255,200,120,0.08) 10%, transparent 60%);
+z-index:-2;
+"></div>
 
-    <h2 id="contador"></h2>
+<!-- 🔢 CAPA DE “NÚMEROS / FRAGMENTOS” -->
+<div style="
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background-image:
+linear-gradient(45deg, rgba(255,255,255,0.03) 25%, transparent 25%),
+linear-gradient(-45deg, rgba(255,255,255,0.03) 25%, transparent 25%);
+background-size:40px 40px;
+z-index:-1;
+"></div>
 
-    <!-- 🔥 BOTÓN BRILLANTE -->
-    <a href="https://instagram.com/TU_USUARIO" target="_blank" style="
-    display:inline-block;
-    margin-top:30px;
-    padding:16px 40px;
-    background: linear-gradient(45deg, #ff0055, #ff3b3b);
-    color:white;
-    text-decoration:none;
-    font-size:18px;
-    border-radius:14px;
-    font-weight:bold;
-    box-shadow:0 0 20px rgba(255,0,80,0.8);
-    animation: brillo 1.5s infinite alternate;
-    ">
-    Conocer más
-    </a>
+<h1 style="font-size:50px; letter-spacing:3px;">
+    Numeros imaginarios
+</h1>
 
-    <script>
-        const fechaEvento = new Date("June 20, 2026 20:00:00").getTime();
+<p style="font-size:22px; opacity:0.9;">
+    🎭 PASADO PRESENTE FUTURO
+</p>
 
-        const contador = setInterval(function() {
-            const ahora = new Date().getTime();
-            const distancia = fechaEvento - ahora;
+<h2 id="contador"></h2>
 
-            const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
-            const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
-            const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+<!-- 🔥 BOTÓN BRILLANTE -->
+<a href="https://instagram.com/TU_USUARIO" target="_blank" style="
+display:inline-block;
+margin-top:30px;
+padding:16px 40px;
+background: linear-gradient(45deg, #ff0055, #ff3b3b);
+color:white;
+text-decoration:none;
+font-size:18px;
+border-radius:14px;
+font-weight:bold;
+box-shadow:0 0 20px rgba(255,0,80,0.8);
+animation: brillo 1.5s infinite alternate;
+">
+Conocer más
+</a>
 
-            document.getElementById("contador").innerHTML =
-                "⏳ " + dias + "d " + horas + "h " + minutos + "m " + segundos + "s";
+<script>
+    const fechaEvento = new Date("June 20, 2026 20:00:00").getTime();
 
-            if (distancia < 0) {
-                clearInterval(contador);
-                document.getElementById("contador").innerHTML = "¡Ya comenzó!";
-            }
-        }, 1000);
-    </script>
+    const contador = setInterval(function() {
+        const ahora = new Date().getTime();
+        const distancia = fechaEvento - ahora;
 
-    <!-- ✨ ANIMACIÓN DEL BRILLO -->
-    <style>
-        @keyframes brillo {
-            from {
-                box-shadow: 0 0 10px rgba(255,0,80,0.5);
-            }
-            to {
-                box-shadow: 0 0 30px rgba(255,0,80,1);
-            }
+        const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+        const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+        const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+        document.getElementById("contador").innerHTML =
+            "⏳ " + dias + "d " + horas + "h " + minutos + "m " + segundos + "s";
+
+        if (distancia < 0) {
+            clearInterval(contador);
+            document.getElementById("contador").innerHTML = "¡Ya comenzó!";
         }
-    </style>
+    }, 1000);
+</script>
+
+<style>
+@keyframes brillo {
+    from {
+        box-shadow: 0 0 10px rgba(255,0,80,0.5);
+    }
+    to {
+        box-shadow: 0 0 30px rgba(255,0,80,1);
+    }
+}
+</style>
 
 </body>
 </html>
