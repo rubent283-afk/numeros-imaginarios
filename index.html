@@ -5,13 +5,35 @@
     <title>Mi Obra</title>
 </head>
 
-<body style="text-align:center; font-family:Arial; background-color:#111; color:white;">
+<body style="text-align:center; font-family:Arial; background: linear-gradient(to right, #000000, #1a1a1a); color:white;">
 
-    <h1>Numeros imaginarios</h1>
+    <h1 style="font-size:40px;">Numeros imaginarios</h1>
 
-    <p>📅 Fecha: 20 de Mayo</p>
+    <p style="font-size:20px;">🎭 ¡No te la pierdas!</p>
 
-    <p>🎭 ¡No te la pierdas!</p>
+    <h2 id="contador">Cargando contador...</h2>
+
+    <script>
+        const fechaEvento = new Date("June 20, 2026 20:00:00").getTime();
+
+        const contador = setInterval(function() {
+            const ahora = new Date().getTime();
+            const distancia = fechaEvento - ahora;
+
+            const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+            document.getElementById("contador").innerHTML =
+                "⏳ " + dias + "d " + horas + "h " + minutos + "m " + segundos + "s";
+
+            if (distancia < 0) {
+                clearInterval(contador);
+                document.getElementById("contador").innerHTML = "¡Ya comenzó!";
+            }
+        }, 1000);
+    </script>
 
 </body>
 </html>
