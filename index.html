@@ -5,13 +5,27 @@
     <title>Mi Obra</title>
 </head>
 
-<body style="text-align:center; font-family:Arial; background: linear-gradient(to right, #000000, #1a1a1a); color:white;">
+<body style="
+margin:0;
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+font-family:Arial;
+color:white;
+background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+url('https://images.unsplash.com/photo-1503095396549-807759245b35');
+background-size:cover;
+background-position:center;
+">
 
-    <h1 style="font-size:40px;">Numeros imaginarios</h1>
+    <h1 style="font-size:50px;">Numeros imaginarios</h1>
 
-    <p style="font-size:20px;">🎭 ¡No te la pierdas!</p>
+    <p style="font-size:22px;">🎭 Una experiencia única</p>
 
-    <h2 id="contador">Cargando contador...</h2>
+    <h2 id="contador"></h2>
 
     <script>
         const fechaEvento = new Date("June 20, 2026 20:00:00").getTime();
